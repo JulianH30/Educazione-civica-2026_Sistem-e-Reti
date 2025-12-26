@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <!-- Font utilizzati -->
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cinzel:wght@400;700;900&family=Cormorant+Garamond:wght@400;600;700&family=Exo+2:wght@400;500;600;700&family=Montserrat:wght@400;500;700;800;900&family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Rajdhani:wght@500;600;700&family=Open+Sans:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cinzel:wght@400;700;900&family=Cormorant+Garamond:wght@400;600;700&family=Exo+2:wght@400;500;600;700&family=Montserrat:wght@400;500;700;800;900&family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Rajdhani:wght@500;600;700&family=Open+Sans:wght@400;500&family=Inter:wght@400;600&display=swap" rel="stylesheet">
 
     <!-- Nota: Assicurati che questi file siano nella stessa cartella -->
     <script src="jquery.min.js"></script>
@@ -292,26 +292,30 @@
             font-family: 'Montserrat', sans-serif;
         }
 
-        /* STILE BADGE CAPITOLO */
+        /* STILE BADGE CAPITOLO - RESTYLING GLASS */
         .chapter-badge {
             position: absolute;
-            top: 0;
+            top: 20px; /* Spostato leggermente in basso per effetto "fluttuante" */
             left: 50%;
             transform: translateX(-50%);
-            background-color: #333; 
-            color: #fff;
-            padding: 4px 20px; 
-            border-bottom-left-radius: 6px; 
-            border-bottom-right-radius: 6px;
-            font-size: 12px; 
-            font-family: 'Playfair Display', serif;
-            font-weight: 600;
-            font-style: italic; 
+            /* Background e Border gestiti dinamicamente via JS per i colori */
+            padding: 6px 16px; 
+            border-radius: 20px; /* Forma a pillola */
+            font-size: 10px; 
+            font-family: 'Inter', sans-serif; /* Font più moderno e pulito */
+            font-weight: 700;
             letter-spacing: 1px;
             text-transform: uppercase;
             z-index: 55;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            backdrop-filter: blur(5px); /* Effetto vetro */
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
             white-space: nowrap;
+            transition: all 0.3s ease;
+        }
+        
+        .chapter-badge:hover {
+            transform: translateX(-50%) translateY(-2px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.15);
         }
 
         /* CONTENITORI DI TESTO */
@@ -990,6 +994,54 @@
             filter: drop-shadow(0 0 18px rgba(170, 102, 255, 0.9));
         }
 
+        /* === PAGINA 47: STILI MIGLIORATI === */
+
+        /* Badge superiore minimalista */
+        .page-47-badge {
+            display: inline-block;
+            background: rgba(46, 164, 79, 0.15);
+            border: 1px solid rgba(46, 164, 79, 0.4);
+            color: #2ea44f;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            backdrop-filter: blur(10px);
+        }
+
+        /* Titolo con gradient moderno */
+        .page-47-title {
+            font-family: 'Playfair Display', serif !important;
+            background: linear-gradient(135deg, #ff10f0 0%, #ff6ec7 100%) !important;
+            -webkit-background-clip: text !important;
+            -webkit-text-fill-color: transparent !important;
+            background-clip: text !important;
+            filter: drop-shadow(0 0 20px rgba(255, 16, 240, 0.4)) !important;
+        }
+
+        /* Testo cyan migliorato */
+        .page-47-cyan-text {
+            color: #6dd5ed !important;
+            text-shadow: 
+                1px 1px 0 #008B8B, 
+                2px 2px 0 #006666, 
+                0 0 15px rgba(109, 213, 237, 0.5) !important;
+        }
+
+        /* Call-to-action con separatore */
+        .page-47-cta {
+            background: linear-gradient(135deg, #6dd5ed 0%, #2193b0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            filter: drop-shadow(0 0 10px rgba(109, 213, 237, 0.3));
+            border-top: 1px solid rgba(109, 213, 237, 0.3);
+            padding-top: 20px;
+            margin-top: 20px;
+        }
+
         .back-cover-style { 
             background-color: #1a1a1a; 
             display: flex; justify-content: center; align-items: center; 
@@ -1318,14 +1370,11 @@
             // PAGINA 11
             {
                 pageIndex: 11, content: "SINTESI: IDENTITÀ",
-                // Posizionato in alto a sinistra
                 speed: 15, top: 10, left: 5, width: 60, 
-                // Stile Clean Modern: Montserrat Medium, Blu Zaffiro
-                color: '#0F52BA', 
-                fontSize: '38px', fontWeight: '500', // Medium weight
-                fontFamily: "'Montserrat', sans-serif",
-                // NESSUNA ombra esterna, bordi netti
-                textShadow: 'none',
+                fontSize: '42px', fontWeight: '700',
+                fontFamily: "'Playfair Display', serif",
+                color: '#0F52BA',
+                textShadow: '2px 2px 0 #000000, 0 0 15px rgba(15, 82, 186, 0.4)',
                 textAlign: 'left'
             },
             {
@@ -1507,13 +1556,11 @@
             {
                 pageIndex: 19, 
                 content: "SINTESI: DIRITTI",
-                // Upper Left positioning
                 speed: 15, top: 10, left: 5, width: 50,
-                // Sharp, Bold Sapphire Blue Sans-Serif, NO Drop Shadow
-                color: '#0F52BA', 
-                fontSize: '38px', fontWeight: '700', 
-                fontFamily: "'Montserrat', sans-serif",
-                textShadow: 'none',
+                fontSize: '42px', fontWeight: '700', 
+                fontFamily: "'Playfair Display', serif",
+                color: '#F39C12',
+                textShadow: '2px 2px 0 #000000, 0 0 15px rgba(243, 156, 18, 0.4)',
                 textAlign: 'left'
             },
             {
@@ -1666,11 +1713,10 @@
             // PAGINA 26: SINTESI DOVERI (Reimagined Digital Projection)
             {
                 pageIndex: 26,
-                // Uso htmlContent per gestire icone e layout preciso
                 htmlContent: `
                     <div style="text-align: left;">
-                        <h2 style="font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 38px; color: #00FFFF; text-shadow: 0 0 5px rgba(0, 255, 255, 0.5); margin-bottom: 30px; margin-top: 0; letter-spacing: 1px;">SINTESI: DOVERI</h2>
-                        <ul style="list-style: none; padding: 0; margin: 0; font-family: 'Exo 2', sans-serif; color: #011526; font-size: 22px; font-weight: 500; line-height: 2.0;">
+                        <h2 style="font-family: 'Playfair Display', serif; font-weight: 700; font-size: 42px; color: #E67E22; text-shadow: 2px 2px 0 #000000, 0 0 15px rgba(230, 126, 34, 0.4); margin-bottom: 30px; margin-top: 0; letter-spacing: 0px;">SINTESI: DOVERI</h2>
+                        <ul style="list-style: none; padding: 0; margin: 0; font-family: 'Montserrat', sans-serif; color: #FFFFFF; font-size: 22px; font-weight: 500; line-height: 2.0;">
                             <li style="margin-bottom: 10px; display: flex; align-items: center;">
                                 <span style="color: #00FFFF; text-shadow: 0 0 8px #00FFFF; font-size: 16px; margin-right: 15px; vertical-align: middle;">■</span> 
                                 Rispetto: la regola d'oro.
@@ -1853,8 +1899,11 @@
             {
                 pageIndex: 34, content: "SINTESI: RISCHI",
                 speed: 15, top: 10, left: 5, width: 80,
-                fontSize: '28px', fontWeight: '800',
-                effect: 'shine-danger-triangle'
+                fontSize: '42px', fontWeight: '700',
+                fontFamily: "'Playfair Display', serif",
+                color: '#C0392B',
+                textShadow: '2px 2px 0 #000000, 0 0 15px rgba(192, 57, 43, 0.4)',
+                textAlign: 'left'
             },
             {
                 pageIndex: 34,
@@ -1935,14 +1984,18 @@
                 pageIndex: 39,
                 content: "SINTESI: SICUREZZA",
                 speed: 15, top: 10, left: 5, width: 80,
-                fontSize: '28px', fontWeight: '800',
-                effect: 'shine-digital-fingerprint'
+                fontSize: '42px', fontWeight: '700',
+                fontFamily: "'Playfair Display', serif",
+                color: '#8E44AD',
+                textShadow: '2px 2px 0 #000000, 0 0 15px rgba(142, 68, 173, 0.4)',
+                textAlign: 'left'
             },
             {
                 pageIndex: 39,
                 content: "• Password complesse e uniche.\n• Attiva sempre la 2FA.\n• Aggiorna software e app.\n• Attento a dove clicchi.",
                 // Testo ordinato in colonna a sinistra (width 40, left 5)
-                speed: 10, top: 25, left: 5, width: 40,
+                // MODIFICA: Spostato top da 25 a 35 per distanziare dal titolo
+                speed: 10, top: 35, left: 5, width: 40,
                 // AUMENTO NITIDEZZA E RILIEVO: Colore Ghiaccio Brillante + Ombra 3D Netta
                 color: '#E0FFFF', 
                 fontSize: '22px', fontWeight: '700', // Bold per definizione
@@ -2073,37 +2126,59 @@
                 textAlign: 'center',
                 textShadow: '2px 2px 0 #3E2723, 0 0 10px rgba(255, 215, 0, 0.5)'
             },
-            // PAGINA 47: CONCLUSIONE (Testo diviso Sopra/Sotto la Sfera)
+            
+            // === PAGINA 47: REDESIGN MIGLIORATO (FINALE) ===
             {
                 pageIndex: 47,
-                content: "SEI PRONTO?",
-                // Alzato titolo al 5% per fare spazio
-                speed: 20, top: 5, left: 10, width: 80,
-                fontSize: '48px', fontWeight: '800',
-                // Magenta Elettrico
-                color: '#FF00FF', 
-                // Effetto 3D Rilievo: Colore profondo + Ombra
-                textShadow: '1px 1px 0 #8B008B, 2px 2px 0 #8B008B, 3px 3px 0 #8B008B, 4px 4px 5px rgba(0,0,0,0.9)'
+                // Badge in alto (stile minimal)
+                htmlContent: `<div style="display: inline-block; background: rgba(46, 164, 79, 0.15); border: 1px solid rgba(46, 164, 79, 0.4); color: #2ea44f; padding: 6px 16px; border-radius: 20px; font-size: 9px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; backdrop-filter: blur(10px);">Educazione Digitale</div>`,
+                top: 3, left: 5, width: 50
             },
             {
-                // PARTE SUPERIORE (Sopra la Sfera)
+                pageIndex: 47,
+                content: "Sei Pronto?",
+                speed: 20, top: 12, left: 0, width: 100,
+                fontSize: '58px', fontWeight: '900', textAlign: 'center',
+                fontFamily: "'Playfair Display', serif",
+                // Gradient moderno invece del colore piatto
+                color: 'transparent', 
+                textShadow: 'none',
+                // Classe custom per il gradient
+                effect: 'page-47-title'
+            },
+            {
                 pageIndex: 47,
                 content: "Il digitale è un'estensione della tua realtà.\nOgni click è una scelta, ogni post lascia un segno.",
-                speed: 10, top: 20, left: 10, width: 80,
-                // Ciano Elettrico
-                color: '#00FFFF', 
-                fontSize: '22px', fontWeight: '600', textAlign: 'center',
-                textShadow: '1px 1px 0 #008B8B, 2px 2px 0 #008B8B, 3px 3px 3px rgba(0,0,0,0.9)'
+                speed: 10, top: 28, left: 10, width: 80,
+                fontSize: '20px', fontWeight: '400', textAlign: 'center',
+                fontFamily: "'Inter', sans-serif",
+                color: '#6dd5ed',
+                lineHeight: '1.6',
+                textShadow: '1px 1px 0 #008B8B, 0 0 10px rgba(109, 213, 237, 0.3)'
             },
             {
-                // PARTE INFERIORE (Sotto la Sfera)
                 pageIndex: 47,
-                content: "Non essere solo un utente passivo: sii l'architetto del tuo mondo.\nCostruisci un web migliore, un'azione alla volta.",
-                speed: 10, top: 75, left: 10, width: 80,
-                // Ciano Elettrico
-                color: '#00FFFF', 
-                fontSize: '22px', fontWeight: '600', textAlign: 'center',
-                textShadow: '1px 1px 0 #008B8B, 2px 2px 0 #008B8B, 3px 3px 3px rgba(0,0,0,0.9)'
+                content: "Non essere solo un utente passivo: sii l'architetto del tuo mondo digitale.",
+                speed: 10, top: 60, left: 10, width: 80,
+                fontSize: '18px', fontWeight: '600', // Aumentato da 400 a 600
+                textAlign: 'center',
+                fontFamily: "'Inter', sans-serif",
+                color: '#FFFFFF', // Cambiato da #a8dadc a bianco puro
+                lineHeight: '1.8',
+                // Ombra potenziata per massima leggibilità sopra la sfera
+                textShadow: '2px 2px 0 #000000, -1px -1px 0 #000000, 0 0 15px rgba(0,0,0,0.9)'
+            },
+            {
+                pageIndex: 47,
+                // Call-to-action finale con separatore visivo AUMENTATO CONTRASTO (rgba 0.7)
+                htmlContent: `
+                    <div style="border-top: 1px solid rgba(109, 213, 237, 0.7); padding-top: 25px; margin-top: 25px;">
+                        <p style="font-family: 'Montserrat', sans-serif; font-size: 19px; font-weight: 600; background: linear-gradient(135deg, #6dd5ed 0%, #2193b0 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1.5; margin: 0; text-align: center;">
+                            Costruisci un web migliore,<br>un'azione alla volta.
+                        </p>
+                    </div>
+                `,
+                top: 75, left: 10, width: 80
             },
 
             // --- PAGINA 48: FONTI UFFICIALI (Layout Editoriale) ---
@@ -2266,6 +2341,19 @@
                 'shine-red', 'shine-green', 'shine-purple'
             ];
 
+            // FUNZIONE DI SUPPORTO PER CONVERTIRE HEX IN RGBA
+            function hexToRgba(hex, alpha) {
+                // Rimuovi il '#' se presente
+                hex = hex.replace('#', '');
+                
+                // Parsa i componenti r, g, b
+                const r = parseInt(hex.substring(0, 2), 16);
+                const g = parseInt(hex.substring(2, 4), 16);
+                const b = parseInt(hex.substring(4, 6), 16);
+                
+                return `rgba(${r}, ${g}, ${b}, ${alpha})`;
+            }
+
             // 1. GENERAZIONE PAGINE
             pages.forEach((file, index) => {
                 const pageNum = index + 1;
@@ -2316,11 +2404,23 @@
                 div.appendChild(shadowDiv);
 
                 const currentChapter = chapters.find(c => pageNum >= c.start && pageNum <= c.end);
-                if (currentChapter) {
+                
+                // NOTA: Escludiamo la pagina 47 dalla generazione automatica del badge 
+                // perché ha già un badge personalizzato inserito manualmente nell'array 'texts'.
+                // Se volessimo usare quello automatico ovunque, dovremmo rimuovere quello manuale dall'array texts.
+                if (currentChapter && pageNum !== 47) {
                     const badge = document.createElement('div');
                     badge.className = 'chapter-badge';
                     badge.innerText = currentChapter.title;
-                    badge.style.backgroundColor = currentChapter.color; 
+                    
+                    // APPLICAZIONE STILE GLASSMORPHISM DINAMICO
+                    // Sfondo semitrasparente basato sul colore del capitolo
+                    badge.style.backgroundColor = hexToRgba(currentChapter.color, 0.15);
+                    // Bordo semitrasparente
+                    badge.style.border = `1px solid ${hexToRgba(currentChapter.color, 0.4)}`;
+                    // Testo colorato solido
+                    badge.style.color = currentChapter.color;
+                    
                     div.appendChild(badge);
                 }
 
@@ -2403,7 +2503,7 @@
                                 }
                             } else {
                                 if (!txtConfig.textShadow) {
-                                    tDiv.style.textShadow = "2px 2px 0px #000, 3px 3px 0px #000, 4px 4px 0px #000, 5px 5px 0px #000, 5px 5px 10px rgba(0,0,0,0.8)";
+                                    tDiv.style.textShadow = "2px 2px 0px #000, 3px 3px 0px #000, 4px 4px 0px #000, 5px 5px 10px rgba(0,0,0,0.8)";
                                 }
                             }
                         }
