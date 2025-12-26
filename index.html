@@ -155,6 +155,22 @@
             pointer-events: none;  
         }
 
+        /* AGGIUNTO: Stile per i link cliccabili dentro le pagine */
+        .static-content-box a {
+            pointer-events: auto !important; /* Abilita il click */
+            color: #FFD700; /* Oro Giallo */
+            text-decoration: none;
+            border-bottom: 1px dotted #FFD700;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .static-content-box a:hover {
+            color: #FFFFFF;
+            text-shadow: 0 0 10px #FFD700;
+            border-bottom: 1px solid #FFFFFF;
+        }
+
         /* STILE TITOLO INDICE */
         .titolo-indice {
             font-family: 'Arial', 'Helvetica', sans-serif !important; 
@@ -1111,7 +1127,8 @@
 
     <script>
         const pages = [];
-        for (let i = 1; i <= 48; i++) { pages.push(i + '.png'); }
+        // MODIFICATO: Aumentato a 50 per includere le fonti (Assicurati di avere 49.png e 50.png)
+        for (let i = 1; i <= 50; i++) { pages.push(i + '.png'); }
 
         const videos = [];
 
@@ -2193,9 +2210,57 @@
                 textShadow: '1px 1px 0 #008B8B, 2px 2px 0 #008B8B, 3px 3px 3px rgba(0,0,0,0.9)'
             },
 
-            // PAGINA 48 (FINE)
+            // --- NUOVA PAGINA 48: FONTI UFFICIALI ---
             {
-                pageIndex: 48, content: "FINE",
+                pageIndex: 48,
+                content: "FONTI UFFICIALI",
+                speed: 15, top: 10, left: 10, width: 80,
+                fontSize: '42px', fontWeight: '800',
+                effect: 'shine-digital-tools', 
+                textAlign: 'left'
+            },
+            {
+                pageIndex: 48,
+                // Link cliccabili con HTML
+                htmlContent: `
+                    <ul style="list-style: none; padding: 0; font-size: 22px; line-height: 2.2; color: #E0F7FA; font-weight: 500;">
+                        <li>► <a href="https://www.rai.it" target="_blank">RAI (Radiotelevisione Italiana)</a></li>
+                        <li>► <a href="https://www.generazioniconnesse.it" target="_blank">Generazioni Connesse (SIC)</a></li>
+                        <li>► <a href="https://www.gpdp.it" target="_blank">Garante per la Privacy</a></li>
+                        <li>► <a href="https://www.commissariatodips.it" target="_blank">Polizia Postale</a></li>
+                        <li>► <a href="https://paroleostili.it" target="_blank">Parole O_Stili</a></li>
+                    </ul>
+                `,
+                top: 25, left: 10, width: 80
+            },
+
+            // --- NUOVA PAGINA 49: SITOGRAFIA & CREDITI ---
+            {
+                pageIndex: 49,
+                content: "SITOGRAFIA\n& CREDITI",
+                speed: 15, top: 10, left: 50, width: 40,
+                fontSize: '42px', fontWeight: '800',
+                effect: 'shine-gold',
+                textAlign: 'right'
+            },
+            {
+                pageIndex: 49,
+                // Link cliccabili allineati a destra
+                htmlContent: `
+                    <ul style="list-style: none; padding: 0; font-size: 22px; line-height: 2.2; color: #FFF8E1; font-weight: 500; text-align: right;">
+                        <li><a href="https://it.wikipedia.org/wiki/Cittadinanza_digitale" target="_blank">Wikipedia - Cittadinanza Digitale</a> ◄</li>
+                        <li><a href="https://www.agid.gov.it" target="_blank">AgID (Agenzia Italia Digitale)</a> ◄</li>
+                        <li><a href="https://fonts.google.com" target="_blank">Google Fonts</a> ◄</li>
+                        <li><a href="https://pixabay.com" target="_blank">Immagini: Pixabay / Freepik</a> ◄</li>
+                        <li>Progetto scolastico 2025 ◄</li>
+                    </ul>
+                `,
+                top: 25, left: 10, width: 80
+            },
+
+            // PAGINA 50 (FINE - SPOSTATA QUI)
+            {
+                pageIndex: 50, content: "FINE",
                 speed: 25, top: 45, left: 0, width: 100, 
                 color: '#ffffff', fontSize: '60px', fontWeight: '800', textAlign: 'center'
             }
