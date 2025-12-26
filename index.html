@@ -171,6 +171,20 @@
             border-bottom: 1px solid #FFFFFF;
         }
 
+        /* STILE INTERATTIVO PER INDICE */
+        .interactive-index {
+            pointer-events: auto !important; /* Rende cliccabile il testo */
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            transform-origin: left center;
+        }
+
+        .interactive-index:hover {
+            transform: translateX(15px) scale(1.05); /* Spostamento e ingrandimento */
+            filter: brightness(1.4) drop-shadow(0 0 5px rgba(255, 255, 255, 0.6)); /* Luminosità aumentata */
+            letter-spacing: 1px; /* Espansione lettere */
+        }
+
         /* STILE TITOLO INDICE */
         .titolo-indice {
             font-family: 'Arial', 'Helvetica', sans-serif !important; 
@@ -1140,7 +1154,8 @@
             { pageIndex: 2, destPage: 27, top: 57, left: 10, width: 80, height: 6 },
             { pageIndex: 2, destPage: 35, top: 65, left: 10, width: 80, height: 6 },
             { pageIndex: 2, destPage: 41, top: 73, left: 10, width: 80, height: 6 },
-            { pageIndex: 2, destPage: 46, top: 81, left: 10, width: 80, height: 6 }
+            { pageIndex: 2, destPage: 46, top: 81, left: 10, width: 80, height: 6 },
+            { pageIndex: 2, destPage: 48, top: 89, left: 10, width: 80, height: 6 } // Nuovo Link per Fonti & Crediti
         ];
 
         const chapters = [
@@ -1171,7 +1186,8 @@
                 color: '#4A004A', 
                 fontSize: '26px', fontWeight: '700', 
                 fontFamily: "'Cinzel', serif",
-                textShadow: '1px 1px 0 #FF00FF, 2px 2px 0 #000'
+                textShadow: '1px 1px 0 #FF00FF, 2px 2px 0 #000',
+                destPage: 3 // Destinazione per click
             },
             {
                 pageIndex: 2, content: "IDENTITÀ DIGITALE",
@@ -1180,7 +1196,8 @@
                 color: '#660066', 
                 fontSize: '26px', fontWeight: '700',
                 fontFamily: "'Cinzel', serif",
-                textShadow: '1px 1px 0 #FF00FF, 2px 2px 0 #000'
+                textShadow: '1px 1px 0 #FF00FF, 2px 2px 0 #000',
+                destPage: 5
             },
             {
                 pageIndex: 2, content: "DIRITTI DIGITALI",
@@ -1189,7 +1206,8 @@
                 color: '#800080', 
                 fontSize: '26px', fontWeight: '700',
                 fontFamily: "'Cinzel', serif",
-                textShadow: '1px 1px 0 #FF00FF, 2px 2px 0 #000'
+                textShadow: '1px 1px 0 #FF00FF, 2px 2px 0 #000',
+                destPage: 12
             },
             {
                 pageIndex: 2, content: "DOVERI E RESPONSABILITÀ",
@@ -1198,7 +1216,8 @@
                 color: '#8B008B', 
                 fontSize: '26px', fontWeight: '700',
                 fontFamily: "'Cinzel', serif",
-                textShadow: '1px 1px 0 #FF00FF, 2px 2px 0 #000'
+                textShadow: '1px 1px 0 #FF00FF, 2px 2px 0 #000',
+                destPage: 20
             },
             {
                 pageIndex: 2, content: "RISCHI DEL DIGITALE",
@@ -1207,7 +1226,8 @@
                 color: '#C71585', 
                 fontSize: '26px', fontWeight: '700',
                 fontFamily: "'Cinzel', serif",
-                textShadow: '1px 1px 0 #FF00FF, 2px 2px 0 #000'
+                textShadow: '1px 1px 0 #FF00FF, 2px 2px 0 #000',
+                destPage: 27
             },
             {
                 pageIndex: 2, content: "SICUREZZA DIGITALE",
@@ -1216,7 +1236,8 @@
                 color: '#D4006E', 
                 fontSize: '26px', fontWeight: '700',
                 fontFamily: "'Cinzel', serif",
-                textShadow: '1px 1px 0 #FF00FF, 2px 2px 0 #000'
+                textShadow: '1px 1px 0 #FF00FF, 2px 2px 0 #000',
+                destPage: 35
             },
             {
                 pageIndex: 2, content: "EDUCAZIONE DIGITALE",
@@ -1225,7 +1246,8 @@
                 color: '#E60073', 
                 fontSize: '26px', fontWeight: '700',
                 fontFamily: "'Cinzel', serif",
-                textShadow: '1px 1px 0 #FF00FF, 2px 2px 0 #000'
+                textShadow: '1px 1px 0 #FF00FF, 2px 2px 0 #000',
+                destPage: 41
             },
             {
                 pageIndex: 2, content: "IL FUTURO",
@@ -1234,7 +1256,18 @@
                 color: '#FF00FF', 
                 fontSize: '26px', fontWeight: '700',
                 fontFamily: "'Cinzel', serif",
-                textShadow: '1px 1px 0 #FFF, 2px 2px 0 #000'
+                textShadow: '1px 1px 0 #FFF, 2px 2px 0 #000',
+                destPage: 46
+            },
+            {
+                pageIndex: 2, content: "FONTI & CREDITI",
+                speed: 10, top: 89, left: 10, width: 80,
+                // 9. Grigio Argento per sezione tecnica (stacco leggero ma stile coerente)
+                color: '#B0C4DE', // Light Steel Blue
+                fontSize: '26px', fontWeight: '700',
+                fontFamily: "'Cinzel', serif",
+                textShadow: '1px 1px 0 #000, 0 0 5px #B0C4DE',
+                destPage: 48
             },
 
             // PAGINA 32: DIPENDENZA DIGITALE (Aumento contrasto e armonizzazione)
@@ -1302,9 +1335,10 @@
                 speed: 10, top: 43, left: 5, width: 45,
                 // Font Editoriale (Playfair Display)
                 fontFamily: "'Playfair Display', serif",
-                // Oro Rosa con ombreggiatura metallica rame
+                // Oro Rosa mantenuto, RILIEVO AUMENTATO (Effetto 3D Estrusione)
                 color: '#F4C2C2', fontSize: '22px', fontWeight: '600',
-                textShadow: '1px 1px 0 #B76E79, 2px 2px 4px rgba(0,0,0,0.8)'
+                // Ombra a strati: Bronzo Chiaro -> Rame Scuro -> Cioccolato -> Nero
+                textShadow: '1px 1px 0 #B76E79, 2px 2px 0 #9E5B65, 3px 3px 0 #854952, 4px 4px 6px rgba(0,0,0,0.9)'
             },
             // PAGINA 5
             {
@@ -2210,36 +2244,40 @@
                 textShadow: '1px 1px 0 #008B8B, 2px 2px 0 #008B8B, 3px 3px 3px rgba(0,0,0,0.9)'
             },
 
-            // --- NUOVA PAGINA 48: FONTI UFFICIALI ---
+            // --- NUOVA PAGINA 48: FONTI UFFICIALI (Layout Editoriale Sinistra) ---
             {
                 pageIndex: 48,
                 content: "FONTI UFFICIALI",
-                speed: 15, top: 10, left: 10, width: 80,
-                fontSize: '42px', fontWeight: '800',
+                // Allineamento preciso a sinistra (colonna 50%)
+                speed: 15, top: 10, left: 5, width: 50,
+                fontSize: '42px', fontWeight: '900',
+                fontFamily: "'Montserrat', sans-serif",
                 effect: 'shine-digital-tools', 
                 textAlign: 'left'
             },
             {
                 pageIndex: 48,
-                // Link cliccabili con HTML
+                // Link cliccabili in colonna stretta a sinistra
                 htmlContent: `
-                    <ul style="list-style: none; padding: 0; font-size: 22px; line-height: 2.2; color: #E0F7FA; font-weight: 500;">
-                        <li>► <a href="https://www.rai.it" target="_blank">RAI (Radiotelevisione Italiana)</a></li>
-                        <li>► <a href="https://www.generazioniconnesse.it" target="_blank">Generazioni Connesse (SIC)</a></li>
-                        <li>► <a href="https://www.gpdp.it" target="_blank">Garante per la Privacy</a></li>
-                        <li>► <a href="https://www.commissariatodips.it" target="_blank">Polizia Postale</a></li>
-                        <li>► <a href="https://paroleostili.it" target="_blank">Parole O_Stili</a></li>
+                    <ul style="list-style: none; padding: 0; font-size: 20px; line-height: 2.0; color: #E0F7FA; font-weight: 500;">
+                        <li style="margin-bottom: 10px;">► <a href="https://www.rai.it" target="_blank">RAI</a></li>
+                        <li style="margin-bottom: 10px;">► <a href="https://www.generazioniconnesse.it" target="_blank">Generazioni Connesse</a></li>
+                        <li style="margin-bottom: 10px;">► <a href="https://www.gpdp.it" target="_blank">Garante Privacy</a></li>
+                        <li style="margin-bottom: 10px;">► <a href="https://www.commissariatodips.it" target="_blank">Polizia Postale</a></li>
+                        <li style="margin-bottom: 10px;">► <a href="https://paroleostili.it" target="_blank">Parole O_Stili</a></li>
                     </ul>
                 `,
-                top: 25, left: 10, width: 80
+                top: 25, left: 5, width: 50
             },
 
-            // --- NUOVA PAGINA 49: SITOGRAFIA & CREDITI ---
+            // --- NUOVA PAGINA 49: SITOGRAFIA & CREDITI (Layout Editoriale Destra) ---
             {
                 pageIndex: 49,
                 content: "SITOGRAFIA\n& CREDITI",
-                speed: 15, top: 10, left: 50, width: 40,
-                fontSize: '42px', fontWeight: '800',
+                // Allineamento preciso a destra (colonna 50% partendo da left 45)
+                speed: 15, top: 10, left: 45, width: 50,
+                fontSize: '42px', fontWeight: '900',
+                fontFamily: "'Montserrat', sans-serif",
                 effect: 'shine-gold',
                 textAlign: 'right'
             },
@@ -2247,15 +2285,15 @@
                 pageIndex: 49,
                 // Link cliccabili allineati a destra
                 htmlContent: `
-                    <ul style="list-style: none; padding: 0; font-size: 22px; line-height: 2.2; color: #FFF8E1; font-weight: 500; text-align: right;">
-                        <li><a href="https://it.wikipedia.org/wiki/Cittadinanza_digitale" target="_blank">Wikipedia - Cittadinanza Digitale</a> ◄</li>
-                        <li><a href="https://www.agid.gov.it" target="_blank">AgID (Agenzia Italia Digitale)</a> ◄</li>
-                        <li><a href="https://fonts.google.com" target="_blank">Google Fonts</a> ◄</li>
-                        <li><a href="https://pixabay.com" target="_blank">Immagini: Pixabay / Freepik</a> ◄</li>
-                        <li>Progetto scolastico 2025 ◄</li>
+                    <ul style="list-style: none; padding: 0; font-size: 20px; line-height: 2.0; color: #FFF8E1; font-weight: 500; text-align: right;">
+                        <li style="margin-bottom: 10px;"><a href="https://it.wikipedia.org/wiki/Cittadinanza_digitale" target="_blank">Wikipedia</a> ◄</li>
+                        <li style="margin-bottom: 10px;"><a href="https://www.agid.gov.it" target="_blank">AgID</a> ◄</li>
+                        <li style="margin-bottom: 10px;"><a href="https://fonts.google.com" target="_blank">Google Fonts</a> ◄</li>
+                        <li style="margin-bottom: 10px;"><a href="https://pixabay.com" target="_blank">Pixabay / Freepik</a> ◄</li>
+                        <li style="margin-bottom: 10px;">Progetto 2025 ◄</li>
                     </ul>
                 `,
-                top: 25, left: 10, width: 80
+                top: 30, left: 45, width: 50
             },
 
             // PAGINA 50 (FINE - SPOSTATA QUI)
@@ -2333,7 +2371,7 @@
                     div.appendChild(badge);
                 }
 
-                if (pageNum > 1 && pageNum < 48) {
+                if (pageNum > 1 && pageNum < 50) { // MODIFICATO: Numerazione fino a pag 49
                     const pageNumDiv = document.createElement('div');
                     pageNumDiv.className = 'page-number';
                     pageNumDiv.innerText = pageNum;
@@ -2383,6 +2421,12 @@
                     
                     if (txtConfig.textShadow) tDiv.style.textShadow = txtConfig.textShadow;
                     
+                    // --- NUOVO: LOGICA PER GLI ELEMENTI INTERATTIVI DELL'INDICE (PAGINA 2) ---
+                    if (txtConfig.pageIndex === 2 && txtConfig.destPage) {
+                        tDiv.classList.add('interactive-index');
+                        tDiv.onclick = function() { $('#flipbook').turn('page', txtConfig.destPage); };
+                    }
+
                     if (!txtConfig.htmlContent) {
                         const weight = txtConfig.fontWeight || '500'; 
                         tDiv.style.fontWeight = weight;
