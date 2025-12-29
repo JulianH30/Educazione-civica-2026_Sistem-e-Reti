@@ -1370,11 +1370,13 @@
             // PAGINA 11
             {
                 pageIndex: 11, content: "SINTESI: IDENTITÀ",
+                // Posizionato in alto a sinistra
                 speed: 15, top: 10, left: 5, width: 60, 
-                fontSize: '42px', fontWeight: '700',
-                fontFamily: "'Playfair Display', serif",
-                color: '#0F52BA',
-                textShadow: '2px 2px 0 #000000, 0 0 15px rgba(15, 82, 186, 0.4)',
+                // Stile Clean Modern: Montserrat Medium, Blu Zaffiro
+                fontSize: '42px', fontWeight: '700', // MODIFICA: Aggiornato
+                fontFamily: "'Playfair Display', serif", // MODIFICA: Aggiornato
+                color: '#0F52BA', 
+                textShadow: '2px 2px 0 #000000, 0 0 15px rgba(15, 82, 186, 0.4)', // MODIFICA: Aggiornato
                 textAlign: 'left'
             },
             {
@@ -1556,11 +1558,12 @@
             {
                 pageIndex: 19, 
                 content: "SINTESI: DIRITTI",
+                // Upper Left positioning
                 speed: 15, top: 10, left: 5, width: 50,
-                fontSize: '42px', fontWeight: '700', 
-                fontFamily: "'Playfair Display', serif",
-                color: '#F39C12',
-                textShadow: '2px 2px 0 #000000, 0 0 15px rgba(243, 156, 18, 0.4)',
+                fontSize: '42px', fontWeight: '700', // MODIFICA: Aggiornato
+                fontFamily: "'Playfair Display', serif", // MODIFICA: Aggiornato
+                color: '#F39C12', // MODIFICA: Aggiornato
+                textShadow: '2px 2px 0 #000000, 0 0 15px rgba(243, 156, 18, 0.4)', // MODIFICA: Aggiornato
                 textAlign: 'left'
             },
             {
@@ -1713,6 +1716,8 @@
             // PAGINA 26: SINTESI DOVERI (Reimagined Digital Projection)
             {
                 pageIndex: 26,
+                // Uso htmlContent per gestire icone e layout preciso
+                // MODIFICA: Aggiornato con nuovo stile Playfair e colori Arancio Scuro
                 htmlContent: `
                     <div style="text-align: left;">
                         <h2 style="font-family: 'Playfair Display', serif; font-weight: 700; font-size: 42px; color: #E67E22; text-shadow: 2px 2px 0 #000000, 0 0 15px rgba(230, 126, 34, 0.4); margin-bottom: 30px; margin-top: 0; letter-spacing: 0px;">SINTESI: DOVERI</h2>
@@ -1899,8 +1904,9 @@
             {
                 pageIndex: 34, content: "SINTESI: RISCHI",
                 speed: 15, top: 10, left: 5, width: 80,
-                fontSize: '42px', fontWeight: '700',
-                fontFamily: "'Playfair Display', serif",
+                // MODIFICA: Aggiornato con nuovo stile Playfair e colori
+                fontSize: '42px', fontWeight: '700', 
+                fontFamily: "'Playfair Display', serif", 
                 color: '#C0392B',
                 textShadow: '2px 2px 0 #000000, 0 0 15px rgba(192, 57, 43, 0.4)',
                 textAlign: 'left'
@@ -1983,6 +1989,7 @@
             {
                 pageIndex: 39,
                 content: "SINTESI: SICUREZZA",
+                // MODIFICA: Aggiornato con nuovo stile Playfair e colori
                 speed: 15, top: 10, left: 5, width: 80,
                 fontSize: '42px', fontWeight: '700',
                 fontFamily: "'Playfair Display', serif",
@@ -2159,6 +2166,7 @@
             {
                 pageIndex: 47,
                 content: "Non essere solo un utente passivo: sii l'architetto del tuo mondo digitale.",
+                // MODIFICA: Aggiornato per migliore leggibilità
                 speed: 10, top: 60, left: 10, width: 80,
                 fontSize: '18px', fontWeight: '600', // Aumentato da 400 a 600
                 textAlign: 'center',
@@ -2166,7 +2174,7 @@
                 color: '#FFFFFF', // Cambiato da #a8dadc a bianco puro
                 lineHeight: '1.8',
                 // Ombra potenziata per massima leggibilità sopra la sfera
-                textShadow: '2px 2px 0 #000000, -1px -1px 0 #000000, 0 0 15px rgba(0,0,0,0.9)' 
+                textShadow: '2px 2px 0 #000000, -1px -1px 0 #000000, 0 0 15px rgba(0,0,0,0.9)'
             },
             {
                 pageIndex: 47,
@@ -2306,13 +2314,30 @@
             // --- PAGINA 49: SITOGRAFIA & CREDITI (Layout Editoriale) ---
             {
                 pageIndex: 49,
+                // MODIFICA: Aggiornata con RAI Play e nuove sezioni
                 htmlContent: `
                     <div class="editorial-container">
                         <div class="editorial-header">
                             <h2 class="editorial-title">SITOGRAFIA & CREDITI</h2>
                         </div>
 
-                        <div class="editorial-section-title">RIFERIMENTI ONLINE</div>
+                        <div class="editorial-section-title">RIFERIMENTI RAI EDUCATIVI</div>
+                        <div class="sitography-grid">
+                            <div class="sitography-item">
+                                <a href="https://www.raiplay.it/programmi/raiscuola" target="_blank">RAI Play - Canale Scuola</a>
+                            </div>
+                            <div class="sitography-item">
+                                <a href="https://www.raicultura.it" target="_blank">RAI Cultura - Portale Educativo</a>
+                            </div>
+                            <div class="sitography-item">
+                                <a href="https://www.raiscuola.rai.it/educazionecivica" target="_blank">RAI Scuola - Educazione Civica</a>
+                            </div>
+                            <div class="sitography-item">
+                                <a href="https://www.raiplay.it/ricerca?q=cittadinanza+digitale" target="_blank">RAI Play - Cittadinanza Digitale</a>
+                            </div>
+                        </div>
+
+                        <div class="editorial-section-title">RISORSE ONLINE GENERALI</div>
                         <div class="sitography-grid">
                             <div class="sitography-item">
                                 <a href="https://it.wikipedia.org/wiki/Cittadinanza_digitale" target="_blank">Wikipedia - Cittadinanza Digitale</a>
@@ -2321,16 +2346,26 @@
                                 <a href="https://www.istat.it" target="_blank">ISTAT - Dati e Statistiche</a>
                             </div>
                             <div class="sitography-item">
+                                <a href="https://www.mise.gov.it" target="_blank">MISE - Innovazione Digitale</a>
+                            </div>
+                            <div class="sitography-item">
+                                <a href="https://www.edu.ti.ch/cittadinanza-digitale" target="_blank">Edu.ti - Cittadinanza Digitale</a>
+                            </div>
+                        </div>
+
+                        <div class="editorial-section-title">RISORSE TECNICHE</div>
+                        <div class="sitography-grid">
+                            <div class="sitography-item">
                                 <a href="https://fonts.google.com" target="_blank">Google Fonts - Tipografia</a>
                             </div>
                             <div class="sitography-item">
-                                <a href="https://pixabay.com" target="_blank">Pixabay - Risorse Grafiche</a>
+                                <a href="https://www.freepik.com" target="_blank">Freepik - Risorse Grafiche</a>
                             </div>
                             <div class="sitography-item">
-                                <a href="https://www.freepik.com" target="_blank">Freepik - Vettori</a>
+                                <a href="https://pixabay.com" target="_blank">Pixabay - Immagini Libere</a>
                             </div>
                             <div class="sitography-item">
-                                <a href="https://developer.mozilla.org" target="_blank">MDN Web Docs</a>
+                                <a href="https://developer.mozilla.org" target="_blank">MDN Web Docs - Sviluppo</a>
                             </div>
                         </div>
 
@@ -2339,25 +2374,42 @@
                             <div class="credits-grid">
                                 <div>
                                     <span class="credit-role">Sviluppo & Design</span>
-                                    <span>Team 5AI</span>
+                                    <span>Team 5AI - 2025</span>
                                 </div>
                                 <div>
                                     <span class="credit-role">Coordinamento</span>
                                     <span>Prof. Informatica</span>
                                 </div>
                                 <div>
-                                    <span class="credit-role">Contenuti</span>
-                                    <span>Classe 5AI - 2025</span>
+                                    <span class="credit-role">Contenuti & Ricerca</span>
+                                    <span>Classe 5AI</span>
                                 </div>
                                 <div>
                                     <span class="credit-role">Tecnologie</span>
-                                    <span>HTML5, CSS3, JS</span>
+                                    <span>HTML5, CSS3, JavaScript, Turn.js</span>
+                                </div>
+                                <div>
+                                    <span class="credit-role">Font</span>
+                                    <span>Google Fonts (Playfair, Montserrat, Inter)</span>
+                                </div>
+                                <div>
+                                    <span class="credit-role">Risorse Multimediali</span>
+                                    <span>RAI Scuola, RAI Cultura, Freepik, Pixabay</span>
+                                </div>
+                            </div>
+                            
+                            <div style="margin-top: 20px; padding: 15px; background: rgba(46, 164, 79, 0.1); border-left: 3px solid #2ea44f; border-radius: 4px;">
+                                <div style="font-size: 11px; color: #555; line-height: 1.6;">
+                                    <strong style="color: #2ea44f; display: block; margin-bottom: 5px;">NOTA EDUCATIVA</strong>
+                                    Progetto didattico realizzato nell'ambito dell'insegnamento di Educazione Civica Digitale. 
+                                    I contenuti sono stati elaborati a scopo educativo e formativo, 
+                                    con particolare attenzione alle fonti ufficiali e ai contenuti RAI Educativi.
                                 </div>
                             </div>
                         </div>
 
                         <div class="editorial-footer">
-                            &copy; 2025 Creative Commons 4.0 BY-NC-SA | Progetto Didattico
+                            &copy; 2025 Licenza Creative Commons 4.0 BY-NC-SA | Progetto Didattico Classe 5AI
                         </div>
                     </div>
                 `,
@@ -2375,14 +2427,24 @@
         let typingTimeouts = [];
 
         $(document).ready(function() {
-            const container = $('#flipbook');
-            const zoomWrapper = $('#zoom-wrapper'); // Riferimento al wrapper
+            // --- AUDIO SOTTOFONDO ---
+            const bgAudio = new Audio('audio.mp3'); 
+            bgAudio.loop = true; bgAudio.volume = 0.2;
+            let audioStarted = false;
+            function unlockAudio() {
+                if (!audioStarted) {
+                    bgAudio.play().then(() => {
+                        audioStarted = true; $(document).off('click keydown touchstart', unlockAudio);
+                    }).catch(e => {});
+                }
+            }
+            $(document).on('click keydown touchstart', unlockAudio);
 
-            // --- DEFINIZIONE AUDIO SICURA ---
-            // 1. Definiamo l'audio qui all'inizio dello script
-            // Se il file 'flip.mp3' non esiste, non succede nulla di grave
-            const flipSound = new Audio('flip.mp3');
-            flipSound.volume = 0.5;
+            // --- AUDIO EFFETTO SFOGLIA ---
+            const flipSound = new Audio('flip.mp3'); flipSound.volume = 0.5;
+
+            const container = $('#flipbook');
+            const zoomWrapper = $('#zoom-wrapper'); 
 
             const shineEffects = [
                 'shine-blue', 'shine-gold', 'shine-silver', 
@@ -2403,23 +2465,34 @@
             }
 
             // 1. GENERAZIONE PAGINE
-            pages.forEach((file, index) => {
-                const pageNum = index + 1;
+            // Aggiungiamo una pagina 51 "fantasma" per bloccare lo slide dell'ultima pagina
+            const totalPages = 51; 
+            for (let i = 1; i <= totalPages; i++) {
+                const pageNum = i;
                 const div = document.createElement('div');
                 div.className = 'page';
                 
-                if (pageNum === 1 || pageNum === pages.length) {
+                if (pageNum === 1 || pageNum === 50) {
                     div.classList.add('hard');
                 }
                 
                 const bgDiv = document.createElement('div');
                 bgDiv.className = 'page-bg';
-                bgDiv.style.backgroundImage = "url('" + file + "')";
-
-                if (pageNum > 1 && pageNum <= 38) {
-                    bgDiv.style.backgroundSize = '100% 96%';
+                
+                // Impostiamo l'immagine solo per le prime 50 pagine
+                if (pageNum <= 50) {
+                    bgDiv.style.backgroundImage = "url('" + pageNum + ".png')";
+                    if (pageNum > 1 && pageNum <= 38) {
+                        bgDiv.style.backgroundSize = '100% 96%';
+                    } else {
+                         bgDiv.style.backgroundSize = '100% 100%';
+                    }
+                    if (pageNum <= 35) {
+                        bgDiv.classList.add('img-color-pulse');
+                    }
                 } else {
-                     bgDiv.style.backgroundSize = '100% 100%';
+                    // Pagina 51: Sfondo trasparente
+                    bgDiv.style.backgroundColor = "transparent"; 
                 }
                 
                 if (pageNum === 4) {
@@ -2434,29 +2507,28 @@
                     div.appendChild(curtain);
                 }
 
-                if (pageNum <= 35) {
-                    bgDiv.classList.add('img-color-pulse');
-                }
-                
                 div.appendChild(bgDiv);
                 
-                const shadowDiv = document.createElement('div');
-                shadowDiv.className = 'gradient-shadow';
-                if (pageNum % 2 === 0) {
-                    shadowDiv.style.right = '0'; shadowDiv.style.left = 'auto'; 
-                    shadowDiv.style.background = 'linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,0.3))';
-                } else {
-                    shadowDiv.style.left = '0'; shadowDiv.style.right = 'auto'; 
-                    shadowDiv.style.background = 'linear-gradient(to right, rgba(0,0,0,0.3), rgba(0,0,0,0))';
+                // Ombra solo per le pagine reali
+                if (pageNum <= 50) {
+                    const shadowDiv = document.createElement('div');
+                    shadowDiv.className = 'gradient-shadow';
+                    if (pageNum % 2 === 0) {
+                        shadowDiv.style.right = '0'; shadowDiv.style.left = 'auto'; 
+                        shadowDiv.style.background = 'linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,0.3))';
+                    } else {
+                        shadowDiv.style.left = '0'; shadowDiv.style.right = 'auto'; 
+                        shadowDiv.style.background = 'linear-gradient(to right, rgba(0,0,0,0.3), rgba(0,0,0,0))';
+                    }
+                    div.appendChild(shadowDiv);
                 }
-                div.appendChild(shadowDiv);
 
                 const currentChapter = chapters.find(c => pageNum >= c.start && pageNum <= c.end);
                 
                 // NOTA: Escludiamo la pagina 47 dalla generazione automatica del badge 
                 // perché ha già un badge personalizzato inserito manualmente nell'array 'texts'.
                 // Se volessimo usare quello automatico ovunque, dovremmo rimuovere quello manuale dall'array texts.
-                if (currentChapter && pageNum !== 47) {
+                if (currentChapter && pageNum !== 47 && pageNum <= 50) {
                     const badge = document.createElement('div');
                     badge.className = 'chapter-badge';
                     badge.innerText = currentChapter.title;
@@ -2563,7 +2635,7 @@
                 });
 
                 container.append(div);
-            });
+            } // End Loop (phantom page)
 
             // 2. FUNZIONE DI RESIZE INTELLIGENTE (ZOOM ENGINE)
             function resizeFlipbook() {
